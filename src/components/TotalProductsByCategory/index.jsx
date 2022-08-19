@@ -3,23 +3,34 @@ import './TotalProductsByCategory.css';
 
 const TotalProductsByCategory = () => {
 
+  const [ categoriesCount, setCategoriesCount ] = useState([]);
+
   useEffect(() => {
     fetch('/api/products?page=1')
     .then(res => res.json())
     .then(data => {
-  
-    });
-  },[])
-
-  // const [ totalByCategory, setTotalByCategory ] = useState();
-  // const getTotalProductsByCategory = () => {
-
-  // };
+      setCategoriesCount(data.categories);
+    })
+    .catch(error => console.error(error));
+  },[]);
 
   return (
-    <div>
-      Hola
-    </div>
+    <section className='categories-count-container'>
+      <ul className='categories-list'>
+        {
+          categoriesCount.map((categoryToRender, i) => {
+            return(
+              <li 
+                className='category-card'
+                key = { i }
+                >
+                <p>{ categoryToRender.category }: { categoryToRender.totalExperiences }</p>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </section>
   );
 };
 
