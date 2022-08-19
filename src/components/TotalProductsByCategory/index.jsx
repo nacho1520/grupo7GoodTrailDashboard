@@ -16,6 +16,7 @@ const TotalProductsByCategory = () => {
 
   return (
     <section className='categories-count-container'>
+      <h2 className='categories-count-title'>Categories</h2>
       <ul className='categories-list'>
         {
           categoriesCount.map((categoryToRender, i) => {
