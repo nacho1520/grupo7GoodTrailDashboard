@@ -1,0 +1,13 @@
+.App {
+  /* text-align: center; */
+  display: flex;
+  height: 100vh;
+}
+
+body {
+  background-image: url('../images/main-background.svg');
+}
+
+.home {
+  width: 90%;
+}
