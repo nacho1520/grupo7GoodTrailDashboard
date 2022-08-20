@@ -16,6 +16,11 @@ li {
     font-size: 16px;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
 .delim {
     width: 90%;
     height: 1px;

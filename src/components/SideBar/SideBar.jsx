@@ -1,6 +1,7 @@
 import React from "react";
 import "./sideBar.css";
 import logo from "../../assets/images/logo.png";
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
     return(
@@ -10,7 +11,15 @@ const SideBar = () => {
             </li>
             <hr className="delim" />
             <li>
-                <span>Goodtrail - Dashboard</span>
+                <Link to='/' className="link">
+                    <span>Goodtrail - Dashboard</span>
+                </Link>
+            </li>
+            <hr className="delim" />
+            <li>
+                <Link to='pag2' className="link">
+                    <span>Página 2</span>
+                </Link>
             </li>
         </ul>
     );
