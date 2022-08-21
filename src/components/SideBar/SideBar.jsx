@@ -17,8 +17,8 @@ const SideBar = () => {
             </li>
             <hr className="delim" />
             <li>
-                <Link to='pag2' className="link">
-                    <span>Página 2</span>
+                <Link to='/experiences' className="link">
+                    <span>Experiences</span>
                 </Link>
             </li>
         </ul>
