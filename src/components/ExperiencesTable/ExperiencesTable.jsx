@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './ExperienceTable.css';
 
 const ExperiencesTable = () => {
     const [experiences, setExperiences] = useState([]);
@@ -13,8 +14,8 @@ const ExperiencesTable = () => {
     }, []);
 
     return(
-        <div>
-            <table>
+        <div className="table-container">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Nombre</th>

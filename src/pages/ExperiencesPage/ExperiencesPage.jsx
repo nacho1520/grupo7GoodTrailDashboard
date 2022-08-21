@@ -1,9 +1,10 @@
 import React from "react";
 import ExperiencesTable from "../../components/ExperiencesTable/ExperiencesTable";
+import './ExperiencePage.css';
 
 const ExperiencesPage = () => {
     return(
-        <div>
+        <div className="experience-container">
             <ExperiencesTable />
         </div>
     );

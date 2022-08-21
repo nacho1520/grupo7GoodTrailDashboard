@@ -4,6 +4,7 @@
 
 .sideBar {
     width: 20%;
+    height: 100%;
     background-color: var(--blue);
     display: flex;
     flex-direction: column;
