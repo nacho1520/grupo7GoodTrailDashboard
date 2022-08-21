@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './ExperienceTable.css';
+import useFetch from "../hooks/useFetch";
 
 const ExperiencesTable = () => {
-    const [experiences, setExperiences] = useState([]);
-
-    useEffect(() => {
-        fetch("/api/products?page=1")
-            .then(response => response.json())
-            .then(data => {
-                setExperiences(data.experiences);
-            })
-            .catch(error => console.log(error))
-    }, []);
+    const { data, isLoading } = useFetch("/api/products?page=1", 'experiences'); 
 
     return(
         <div className="table-container">
@@ -23,16 +15,17 @@ const ExperiencesTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {experiences.map((exp, index) => {
+                    {data && data.length > 0  && data.map((exp, index) => {
                         return(
-                            <tr>
+                            <tr key={index}>
                                 <td>{exp.name}</td>
                                 <td>{exp.description}</td>
                             </tr>
-                        );
-                    })}
+                        );}) 
+                    }
                 </tbody>
             </table>
+            {isLoading && <div>Loading...</div>}
         </div>
     );
 }

@@ -1,16 +1,37 @@
 import React from "react";
-import { useState } from "react";
 
-const useFetch = url => {
-    const [data, setData] = useState(null);
+const success = {
+    data: null,
+    isLoading: false
+}
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            setData(data);
-        });
-    
-    return data;
+const loadingState = {
+    data: null,
+    isLoading: true
+}
+
+const initialState = {
+    data: null,
+    isLoading: false
+}
+
+const useFetch = (url, objectWanted) => {
+    const [state, setState] = React.useState(initialState);
+
+    const fetchData = () => {
+        setState(loadingState);
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setState({ ...success, data: data[objectWanted] });
+            })
+    }
+
+    React.useEffect(() => {
+        fetchData();
+    }, []);
+
+    return { ...state, fetchData }
 }
 
 export default useFetch;
