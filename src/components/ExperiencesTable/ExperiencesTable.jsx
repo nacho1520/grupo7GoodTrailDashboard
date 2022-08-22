@@ -8,33 +8,35 @@ const ExperiencesTable = () => {
 
     const showTable = () => {
         return(
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Categoria</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data && data.length > 0  && data.map((exp, index) => {
-                        return(
-                            <tr key={index}>
-                                <td>{exp.id}</td>
-                                <td>{exp.name}</td>
-                                <td>{exp.description}</td>
-                                <td>{exp.category.category_name}</td>
-                            </tr>
-                        );}) 
-                    }
-                </tbody>
-            </table>
+            <div className="table-container">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data && data.length > 0  && data.map((exp, index) => {
+                            return(
+                                <tr key={index}>
+                                    <td>{exp.id}</td>
+                                    <td>{exp.name}</td>
+                                    <td>{exp.description}</td>
+                                    <td>{exp.category.category_name}</td>
+                                </tr>
+                            );}) 
+                        }
+                    </tbody>
+                </table>
+            </div>
         );
     }
 
     return(
-        <div className="table-container">
+        <div className="container">
             {isLoading ? <LoaderSpinner /> : 
                 showTable()
             }
