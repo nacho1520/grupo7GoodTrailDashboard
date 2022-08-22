@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import './ExperienceTable.css';
 import useFetch from "../hooks/useFetch";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const ExperiencesTable = () => {
     const { data, isLoading } = useFetch("/api/products?page=1", 'experiences'); 
 
-    return(
-        <div className="table-container">
+    const showTable = () => {
+        return(
             <table className="table">
                 <thead>
                     <tr>
@@ -25,7 +26,14 @@ const ExperiencesTable = () => {
                     }
                 </tbody>
             </table>
-            {isLoading && <div>Loading...</div>}
+        );
+    }
+
+    return(
+        <div className="table-container">
+            {isLoading ? <LoaderSpinner /> : 
+                showTable()
+            }
         </div>
     );
 }
