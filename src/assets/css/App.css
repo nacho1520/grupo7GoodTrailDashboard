@@ -5,7 +5,8 @@
 }
 
 body {
-  background-image: url('../images/main-background.svg');
+  background-color: #e9ecef;
+  /* background-image: url('../images/main-background.svg'); */
 }
 
 .home {

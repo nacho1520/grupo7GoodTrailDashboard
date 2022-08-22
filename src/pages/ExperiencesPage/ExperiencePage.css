@@ -2,4 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.title-container {
+    background-color: white;
+    border-radius: 12px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.experiences-title {
+    text-align: left;
 }
