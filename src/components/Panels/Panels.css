@@ -1,3 +1,28 @@
 .panels-container{
-    color:brown;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.total-panel{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:black;
+    font-weight: bold;
+    border: 1px solid black;
+    border-left: 4px solid #77a1ff;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: 300px;
+    height: 75px;
+    padding: 10px;
+
+}
+
+.icon-total-panel{
+    border: solid 3px #77a1ff;
+    border-radius: 25px;
+    padding: 7px;
 }

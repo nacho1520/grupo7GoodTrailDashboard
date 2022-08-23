@@ -20,9 +20,9 @@ function Panels () {
     }, [])
     return (
         <div className='panels-container'>
-            <h3>Total de productos {totalProducts.count}</h3>
-            <h3>Total de usuarios {totalUsers}</h3>
-            <h3>Total de categorias {totalProducts.categories ? totalProducts.categories.length : ""} </h3>
+            <h3 className='total-panel'><p>Total de experiencias {totalProducts.count}</p><i className="fa-solid fa-star icon-total-panel"></i></h3>
+            <h3 className='total-panel'><p>Total de usuarios {totalUsers}</p><i className="fa-solid fa-users icon-total-panel"></i></h3>
+            <h3 className='total-panel'><p>Total de categorias {totalProducts.categories ? totalProducts.categories.length : ""}</p><i className="fa-solid fa-list icon-total-panel"></i></h3>
         </div>
     )
 }
