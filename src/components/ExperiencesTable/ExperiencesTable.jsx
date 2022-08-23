@@ -2,10 +2,15 @@ import React, { useState, useEffect } from "react";
 import './ExperienceTable.css';
 import useFetch from "../hooks/useFetch";
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
+import ReactPaginate from "react-paginate";
 
 const ExperiencesTable = () => {
-    const { page, setPage } = useState(1);
-    const { data, isLoading } = useFetch(`/api/products?page=1`, 'experiences'); 
+    const [page, setPage] = useState(1);
+    const { data, isLoading } = useFetch(`/api/products?page=${page}`, 'experiences'); 
+
+    const changePage = ({ selected }) => {
+        setPage(selected);
+    }
 
     const showTable = () => {
         return(
@@ -32,6 +37,12 @@ const ExperiencesTable = () => {
                         }
                     </tbody>
                 </table>
+                <ReactPaginate 
+                    previousLabel={'Previous'}
+                    nextLabel={'Next'}
+                    pageCount={5}
+                    onPageChange={changePage}
+                />
             </div>
         );
     }
