@@ -4,7 +4,8 @@ import useFetch from "../hooks/useFetch";
 import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const ExperiencesTable = () => {
-    const { data, isLoading } = useFetch("/api/products?page=1", 'experiences'); 
+    const { page, setPage } = useState(1);
+    const { data, isLoading } = useFetch(`/api/products?page=1`, 'experiences'); 
 
     const showTable = () => {
         return(
@@ -37,9 +38,7 @@ const ExperiencesTable = () => {
 
     return(
         <div className="container">
-            {isLoading ? <LoaderSpinner /> : 
-                showTable()
-            }
+            { isLoading ? <LoaderSpinner /> : showTable() }
         </div>
     );
 }
