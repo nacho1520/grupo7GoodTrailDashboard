@@ -14,7 +14,6 @@ function Panels () {
         fetch("/api/products?page=1")
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setTotalProducts(data)
         })
     }, [])
@@ -22,7 +21,7 @@ function Panels () {
         <div className='panels-container'>
             <h3 className='total-panel'><p>Total de experiencias {totalProducts.count}</p><i className="fa-solid fa-star icon-total-panel"></i></h3>
             <h3 className='total-panel'><p>Total de usuarios {totalUsers}</p><i className="fa-solid fa-users icon-total-panel"></i></h3>
-            <h3 className='total-panel'><p>Total de categorias {totalProducts.categories ? totalProducts.categories.length : ""}</p><i className="fa-solid fa-list icon-total-panel"></i></h3>
+            <h3 className='total-panel'><p>Total de categorías {totalProducts.categories ? totalProducts.categories.length : ""}</p><i className="fa-solid fa-list icon-total-panel"></i></h3>
         </div>
     )
 }
