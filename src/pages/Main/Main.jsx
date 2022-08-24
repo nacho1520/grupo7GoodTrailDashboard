@@ -7,8 +7,10 @@ const Main = () => {
     return(
         <div>
             <Panels />
+            <div className="main">
             <TotalProductsByCategory />
             <LastExperience />
+            </div>
         </div>
     );
 }

@@ -1,9 +1,10 @@
 .col-lg-6{
     width: 40%;
-    margin-left: 25%;
     font-family: Roboto, sans-serif;
     border: #000 1px solid;
     border-left: 4px solid #77a1ff;
+    display: flex;
+    margin: 0%;
 }
 
 .card {
