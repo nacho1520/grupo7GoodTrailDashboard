@@ -21,12 +21,6 @@ const SideBar = () => {
                     <span>Experiences</span>
                 </Link>
             </li>
-            <hr className="delim" />
-            <li>
-                <Link to='/lastExperience' className="link">
-                    <span>Last Experience</span>
-                </Link>
-            </li>
         </ul>
     );
 }
