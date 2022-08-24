@@ -15,7 +15,7 @@ const initialState = {
     isLoading: false
 }
 
-const useFetch = (url, objectWanted) => {
+const useFetch = (url) => {
     const [state, setState] = React.useState(initialState);
 
     const fetchData = () => {
@@ -23,7 +23,7 @@ const useFetch = (url, objectWanted) => {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                setState({ ...success, data: data[objectWanted] });
+                setState({ ...success, data: data });
             })
     }
 

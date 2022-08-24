@@ -5,8 +5,13 @@ import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 import ReactPaginate from "react-paginate";
 
 const ExperiencesTable = () => {
-    const [page, setPage] = useState(1);
-    const { data, isLoading } = useFetch(`/api/products?page=${page}`, 'experiences'); 
+    const [page, setPage] = useState(0);
+    const { data, isLoading, fetchData } = useFetch(`/api/products?page=${page}`); 
+
+    useEffect(() => {
+        fetchData();
+        console.log(page);
+    }, [page])
 
     const changePage = ({ selected }) => {
         setPage(selected);
@@ -25,7 +30,7 @@ const ExperiencesTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data && data.length > 0  && data.map((exp, index) => {
+                        {data && data.experiences.length > 0  && data.experiences.map((exp, index) => {
                             return(
                                 <tr key={index}>
                                     <td>{exp.id}</td>
@@ -38,10 +43,15 @@ const ExperiencesTable = () => {
                     </tbody>
                 </table>
                 <ReactPaginate 
-                    previousLabel={'Previous'}
-                    nextLabel={'Next'}
-                    pageCount={5}
+                    previousLabel={'<<'}
+                    nextLabel={'>>'}
+                    pageCount={data && data.pages}
                     onPageChange={changePage}
+                    containerClassName={'pagination-container'}
+                    previousLinkClassName={'previos-btn'}
+                    nextLinkClassName={'next-btn'}
+                    disabledClassName={'disabled-btn'}
+                    activeClassName={'active-btn'}
                 />
             </div>
         );
