@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import './LastExperience.css';
 
-function LastExperienceTable() {
+function LastExperience() {
     const [lastProduct, setLastProduct] = useState([])
 
     useEffect(() => {
         fetch("/api/products?page=1")
             .then(res => res.json())
             .then(data => {
-                const page = Math.round(data.count / 10) + 1
-                return page
+                const lastExperienceId = data.count
+                return lastExperienceId
             })
-            .then(data => {
-                fetch(`/api/products?page=${data}`)
+            .then(lastExperienceId => {
+                fetch(`/api/products/${lastExperienceId}`)
                     .then(res => res.json())
                     .then(data => {
-                        let experiencia = data.experiences[data.experiences.length - 1]
-                        setLastProduct(experiencia)
+                        let experience = data.data.experience
+                        setLastProduct(experience)
                     })
             })
 
@@ -34,4 +34,4 @@ function LastExperienceTable() {
         </div>
     )
 }
-export default LastExperienceTable;
+export default LastExperience;
