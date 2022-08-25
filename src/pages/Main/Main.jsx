@@ -2,7 +2,7 @@ import React from "react";
 import Panels from "../../components/Panels";
 import TotalProductsByCategory from "../../components/TotalProductsByCategory";
 import LastExperience from "../../components/LastExperience/index";
-
+import './main.css'
 const Main = () => {
     return(
         <div>
