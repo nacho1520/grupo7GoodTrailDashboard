@@ -1,5 +1,6 @@
 :root {
   --blue: #77a1ff;
+  --gray: #ced4da;
 }
 
 * {
@@ -35,10 +36,23 @@ body {
   margin: 8px;
   border-radius: 5px;
   border: 2px solid var(--blue);
+  color: var(--blue);
   cursor: pointer;
+}
+
+.pagination-container a:hover {
+  background-color: var(--blue);
+  color: white;
 }
 
 .active-btn a {
   background-color: var(--blue);
   color: white;
+}
+
+.disabled-btn a, .disabled-btn a:hover {
+  background-color: var(--gray);
+  color: white;
+  cursor: not-allowed;
+  border: 2px solid var(--gray);
 }

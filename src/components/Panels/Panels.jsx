@@ -6,7 +6,7 @@ function Panels () {
     const [totalUsers, setTotalUsers] = useState([])
     const [totalProducts, setTotalProducts] = useState([])
     useEffect(() =>{
-        fetch("/api/users")
+        fetch("/api/users?page=0")
         .then(res => res.json())
         .then(data => {
             setTotalUsers(data.count)

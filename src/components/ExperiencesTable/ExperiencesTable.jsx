@@ -15,8 +15,8 @@ const ExperiencesTable = () => {
         console.log(page);
     }, [page])
 
-    const changePage = ({ selected }) => {
-        setPage(selected);
+    const changePage = (event) => {
+        setPage(event.selected);
     }
 
     const showTable = () => {
@@ -33,6 +33,7 @@ const ExperiencesTable = () => {
                     nextLinkClassName={'next-btn'}
                     disabledClassName={'disabled-btn'}
                     activeClassName={'active-btn'}
+                    forcePage={page}
                 />
             </div>
         );

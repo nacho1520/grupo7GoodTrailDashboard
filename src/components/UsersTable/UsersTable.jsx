@@ -31,6 +31,7 @@ const UsersTable = () => {
                     nextLinkClassName={'next-btn'}
                     disabledClassName={'disabled-btn'}
                     activeClassName={'active-btn'}
+                    forcePage={page}
                 />
             </div>
         );
