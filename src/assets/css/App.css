@@ -1,3 +1,7 @@
+:root {
+  --blue: #77a1ff;
+}
+
 * {
   font-family: Roboto, sans-serif;
 }
@@ -14,4 +18,27 @@ body {
 
 .home {
   width: 90%;
+}
+
+/*** Pagination ***/
+.pagination-container {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-container a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+
+.active-btn a {
+  background-color: var(--blue);
+  color: white;
 }

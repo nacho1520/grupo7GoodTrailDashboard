@@ -22,8 +22,8 @@ const UsersTable = () => {
             <div className="table-container">
                 { data && data.users.length > 0 && <Table header={header} data={data.users} isForExp={false}/> }
                 <ReactPaginate 
-                    previousLabel={'<<'}
-                    nextLabel={'>>'}
+                    previousLabel={<i class="fa-solid fa-angle-left"></i>}
+                    nextLabel={<i class="fa-solid fa-angle-right"></i>}
                     pageCount={data && data.pages}
                     onPageChange={changePage}
                     containerClassName={'pagination-container'}
