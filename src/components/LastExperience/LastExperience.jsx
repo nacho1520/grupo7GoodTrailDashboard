@@ -1,36 +1,28 @@
 import React, { useState, useEffect } from "react";
+import useFetch from '../hooks/useFetch';
+import LoaderSpinner from '../LoaderSpinner/LoaderSpinner';
 import './LastExperience.css';
 
 function LastExperience() {
-    const [lastProduct, setLastProduct] = useState([])
+    const { data, isLoading } = useFetch('/api/products/last');
 
-    useEffect(() => {
-        fetch("/api/products?page=1")
-            .then(res => res.json())
-            .then(data => {
-                const lastExperienceId = data.count
-                return lastExperienceId
-            })
-            .then(lastExperienceId => {
-                fetch(`/api/products/${lastExperienceId}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        let experience = data.data.experience
-                        setLastProduct(experience)
-                    })
-            })
-
-    }, [])
+    const showBody = () => {
+        return(
+            <div className="card-body">
+                <p className="subTitle">{data.experience.name}</p>
+                <p>{data.experience.description}</p>
+            </div>
+        ); 
+    }
 
     return (
         <div className="last-experience-container">
                 <div className="card-header py-3">
                     <h5>Ultima Experiencia</h5>
                 </div>
-                <div className="card-body">
-                    <p className="subTitle">{lastProduct.name}</p>
-                    <p>{lastProduct.description}</p>
-                </div>
+                {isLoading ? <LoaderSpinner /> :
+                    data && data.experience && showBody()
+                }
         </div>
     )
 }
