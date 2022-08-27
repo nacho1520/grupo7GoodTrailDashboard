@@ -23,7 +23,7 @@ const SideBar = () => {
             </li>
             <hr className="delim" />
             <li>
-                <Link to='/experiences' className="link">
+                <Link to='/users' className="link">
                     <span>Usuarios</span>
                 </Link>
             </li>

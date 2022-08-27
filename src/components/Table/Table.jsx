@@ -2,17 +2,11 @@ import React from "react";
 import './Table.css';
 
 const Table = ({ header, data, isForExp }) => {
-    return(
-        <table className="table">
-            <thead>
-                <tr>
-                    {header.map((head) => {
-                        return(<th>{head}</th>);
-                    })}
-                </tr>
-            </thead>
+
+    const bodyForExperience = () => {
+        return(
             <tbody>
-                {data.experiences.map((exp, index) => {
+                {data.map((exp, index) => {
                     return(
                         <tr key={index}>
                             <td>{exp.id}</td>
@@ -23,6 +17,36 @@ const Table = ({ header, data, isForExp }) => {
                     );}) 
                 }
             </tbody>
+        );
+    }
+
+    const bodyForUser = () => {
+        return(
+            <tbody>
+                {data.map((user, index) => {
+                    return(
+                        <tr>
+                            <td>{user.id}</td>
+                            <td>{user.first_name}</td>
+                            <td>{user.last_name}</td>
+                            <td>{user.email}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        );
+    }
+
+    return(
+        <table className="table">
+            <thead>
+                <tr>
+                    {header.map((head) => {
+                        return(<th>{head}</th>);
+                    })}
+                </tr>
+            </thead>
+            {isForExp ? bodyForExperience() : bodyForUser()}
         </table>     
     );
 }

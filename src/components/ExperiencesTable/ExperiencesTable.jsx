@@ -22,7 +22,7 @@ const ExperiencesTable = () => {
     const showTable = () => {
         return(
             <div className="table-container">
-                {data && data.experiences.length > 0  && <Table header={header} data={data} />}
+                {data && data.experiences.length > 0  && <Table header={header} data={data.experiences} isForExp={true} />}
                 <ReactPaginate 
                     previousLabel={'<<'}
                     nextLabel={'>>'}

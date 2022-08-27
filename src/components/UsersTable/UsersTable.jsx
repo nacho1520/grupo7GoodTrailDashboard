@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate";
 
 const UsersTable = () => {
     const [page, setPage] = useState(0);
-    const { data, isLoading, fetchData } = useFetch(`/api/productos?page=${page}`);
+    const { data, isLoading, fetchData } = useFetch(`/api/users?page=${page}`);
     const header = ['ID', 'Nombre', 'Apellido', 'Email'];
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const UsersTable = () => {
     const showTable = () => {
         return(
             <div className="table-container">
-                <Table header={header} />
+                { data && data.users.length > 0 && <Table header={header} data={data.users} isForExp={false}/> }
                 <ReactPaginate 
                     previousLabel={'<<'}
                     nextLabel={'>>'}
