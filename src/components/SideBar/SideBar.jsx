@@ -12,19 +12,19 @@ const SideBar = () => {
             <hr className="delim" />
             <li>
                 <Link to='/' className="link">
-                    <span>Goodtrail - Dashboard</span>
+                    <span><i class="fa-solid fa-chart-line icon-total-panel"></i>Dashboard</span>
                 </Link>
             </li>
             <hr className="delim" />
             <li>
                 <Link to='/experiences' className="link">
-                    <span>Experiencias</span>
+                    <span><i className="fa-solid fa-star icon-total-panel"></i>Experiencias</span>
                 </Link>
             </li>
             <hr className="delim" />
             <li>
                 <Link to='/users' className="link">
-                    <span>Usuarios</span>
+                    <span><i className="fa-solid fa-users icon-total-panel"></i>Usuarios</span>
                 </Link>
             </li>
         </ul>
