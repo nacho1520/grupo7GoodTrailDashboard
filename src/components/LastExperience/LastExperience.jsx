@@ -11,6 +11,8 @@ function LastExperience() {
             <div className="card-body">
                 <p className="subTitle">{data.experience.name}</p>
                 <p>{data.experience.description}</p>
+                <p>{data.experience.location}</p>
+                <p>{data.experience.price}</p>
             </div>
         ); 
     }
