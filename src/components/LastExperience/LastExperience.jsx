@@ -10,28 +10,12 @@ function LastExperience() {
         return(
             <div className="card-body">
                 <p className="subTitle">{data.experience.name}</p>
+                <div className="image-container">
+                    <img className="experience-image" src={`http://localhost:4000/img/cardImages/${data.experience.images[0].url}`}/>
+                </div>
                 <div className="info">
-                    <div>
-                        <p className="subSubTitle">Descripción:</p>
-                    </div>
                     <div className="data">
                         <p>{data.experience.description}</p>
-                    </div>
-                </div>
-                <div className="info">
-                    <div>
-                        <p className="subSubTitle">Locación:</p>
-                    </div>
-                    <div className="data">
-                        <p>{data.experience.location}</p>
-                    </div>
-                </div>
-                <div className="info">
-                    <div>
-                        <p className="subSubTitle">Precio:</p>
-                    </div>
-                    <div className="data">
-                        <p>{data.experience.price}</p>
                     </div>
                 </div>
             </div>
