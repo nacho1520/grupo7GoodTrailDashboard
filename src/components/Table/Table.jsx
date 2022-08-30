@@ -7,12 +7,14 @@ const Table = ({ header, data, isForExp }) => {
         return(
             <tbody>
                 {data.map((exp, index) => {
+                    let imageLink = `http://localhost:4000/img/cardImages/${exp.images[0].url}`;
                     return(
                         <tr key={index}>
                             <td>{exp.id}</td>
                             <td>{exp.name}</td>
                             <td>{exp.description}</td>
                             <td>{exp.category.category_name}</td>
+                            <td><a className="image-link" href={imageLink}><i class="fa-solid fa-image"></i></a></td>
                         </tr>
                     );}) 
                 }
