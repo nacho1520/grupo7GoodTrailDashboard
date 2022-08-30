@@ -9,8 +9,8 @@ const Main = () => {
         <div>
             <Panels />
             <div className="main">
-            <TotalProductsByCategory />
-            <LastExperience />
+                <TotalProductsByCategory />
+                <LastExperience />
             </div>
         </div>
     );

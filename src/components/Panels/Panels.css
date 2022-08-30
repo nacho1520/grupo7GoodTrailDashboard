@@ -1,9 +1,6 @@
 .panels-container{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px auto;
-    width: 98.8%;
+    flex-direction: column;
 }
 
 .total-panel{
@@ -26,4 +23,14 @@
     border: solid 3px #77a1ff;
     border-radius: 25px;
     padding: 7px;
+}
+
+@media (min-width: 768px) {
+    .panels-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px auto;
+        width: 98.8%;
+    }
 }

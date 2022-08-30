@@ -7,8 +7,8 @@
   font-family: Roboto, sans-serif;
 }
 .App {
-  /* text-align: center; */
   display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -57,4 +57,11 @@ body {
   color: white;
   cursor: not-allowed;
   border: 2px solid var(--gray);
+}
+
+
+@media (min-width: 768px) {
+  .App {
+    flex-direction: row;
+  }
 }
