@@ -1,6 +1,5 @@
 .last-experience-container{
-    width: 60%;
-    min-width: 300px;
+    width: 70%;
     font-family: Roboto, sans-serif;
     border: #000 1px solid;
     border-radius: 5px;
@@ -13,6 +12,7 @@
     height: 435px;
     justify-content: flex-start;
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .card-header {
@@ -68,16 +68,12 @@
     object-position: center;
 }
 
-/* @media (min-width: 768px)
-.precioMasCant {
-    margin-bottom: 25%;
-}
+@media (min-width: 768px){
 
-@media (min-width: 559px)
-.precioMasCant {
-    margin-bottom: 20%;
-} */
-@media (max-width: 768px){
+    .last-experience-container {
+        width: 60%;
+        min-width: 300px;
+    }
 
     .info {
         display: block;

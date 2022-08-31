@@ -18,7 +18,7 @@ body {
 }
 
 .home {
-  width: 90%;
+  width: 100%;
 }
 
 /*** Pagination ***/
@@ -63,5 +63,9 @@ body {
 @media (min-width: 768px) {
   .App {
     flex-direction: row;
+  }
+
+  .home {
+    width: 90%;
   }
 }
