@@ -8,7 +8,7 @@ import ReactPaginate from "react-paginate";
 const ExperiencesTable = () => {
     const [page, setPage] = useState(0);
     const { data, isLoading, fetchData } = useFetch(`/api/products?page=${page}`); 
-    const header = ['ID', 'Nombre', 'Descripcion', 'Categoria'];
+    const header = ['ID', 'Nombre', 'Descripcion', 'Categoria', 'Imagen'];
 
     useEffect(() => {
         fetchData();

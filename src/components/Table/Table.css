@@ -8,6 +8,7 @@
     border-collapse: collapse;
     color: var(--table-gray);
     border: 1px solid var(--gray);
+    margin-bottom: 100px;
 }
 
 .table td {
@@ -24,6 +25,11 @@
 }
 
 .image-link {
-    color: var(--blue);
-    
+    color: var(--blue);   
+}
+
+@media (min-width: 768px) {
+    .table {
+        margin-bottom: 0;
+    }
 }
